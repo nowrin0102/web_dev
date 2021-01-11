@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'poll2_django.urls'
@@ -78,12 +79,17 @@ WSGI_APPLICATION = 'poll2_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME':'de4mgk5rec3gb7',
+        'HOST':'ec2-52-205-61-60.compute-1.amazonaws.com',
+        'PORT':5432,
+        'USER':'aqmbseyinnhuzl',
+        'PASSWORD':'b3c49fca8b7945d03eec67679b02d585079ba6be1c2be0e8ba0f792516c559dd',
     }
 }
 
-
+# postgres://aqmbseyinnhuzl:b3c49fca8b7945d03eec67679b02d585079ba6be1c2be0e8ba0f792516c559dd@ec2-52-205-61-60.compute-1.amazonaws.com:5432/de4mgk5rec3gb7
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
